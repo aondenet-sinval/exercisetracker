@@ -1,6 +1,7 @@
 const Exercise = require('../models/exercise')
 const User = require('../models/user')
-module.exports = async (req, res) => {
+
+const addExercise = async (req, res) => {
   const userId = req.params.id;
   const { description, duration } = req.body;
 
@@ -25,3 +26,4 @@ module.exports = async (req, res) => {
       .catch(error => res.json({error: error}))
       //logs
 };
+module.exports = addExercise
