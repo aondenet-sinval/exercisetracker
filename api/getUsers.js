@@ -7,7 +7,7 @@ const getUsers =(req, res) => {
       res.json(users)
     })
   } catch (error) {
-    res.json({ error: error.message });
+    res.json({ error: error.message })
   }
 };
 

@@ -1,4 +1,4 @@
-const User = require('../models/user');
+const User = require('../models/user')
 const dateForString = require('../utils/dateForString')
 const Exercise = require('../models/exercise')
 
@@ -18,9 +18,9 @@ const getUserLogsById = async (req, res) => {
     let exercises = await Exercise.find({date: {$gte: minDate, $lte: maxDate}})
       .all('username', [ name.username]).limit(qtdeMin)
       .select({ description: 1, duration: 1, date: 1 })
-      .exec();
+      .exec()
   // Chamada da função para converter as datas em string
-  dateForString(exercises);
+  dateForString(exercises)
   const log = {
     username: name.username,
     count: countQuery,

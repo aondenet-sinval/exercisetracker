@@ -2,14 +2,12 @@ const Exercise = require('../models/exercise')
 const User = require('../models/user')
 
 const addExercise = async (req, res) => {
-  const userId = req.params.id;
-  const { description, duration } = req.body;
+  const userId = req.params.id
+  const { description, duration } = req.body
 
     const body = req.body
     // verificando usuários
-    // let users = {}
     const user = await User.findById(req.params.id)
-      // console.log('userxx', user);
     const now = new Date()
     const exercise = new Exercise( {
       username: user.username,
@@ -21,7 +19,6 @@ const addExercise = async (req, res) => {
       .then(savedExercise => savedExercise.toJSON())
       .then(savedAndFormattedExercise => {
         res.json(savedAndFormattedExercise)
-        // mongoose.connection.close()
       } )
       .catch(error => res.json({error: error}))
       //logs
