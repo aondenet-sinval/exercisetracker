@@ -17,8 +17,8 @@ app.get('/', (req, res) => {
 app.use(bodyParser.urlencoded({extended: false}))
 //rotas
 app.get('/api/users', getUsers)
-app.get('/api/users/:id', getUserById)
-app.get('/api/users/:id/logs', getUserLogsById)
+app.get('/api/users/:_id', getUserById)
+app.get('/api/users/:_id/logs', getUserLogsById)
 // Rota para teste post
 // app.post('/api/users', addUser)
 // app.post('/api/users/:id/exercises', addExercise)

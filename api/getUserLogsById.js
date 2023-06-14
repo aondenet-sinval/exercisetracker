@@ -5,7 +5,7 @@ const Exercise = require('../models/exercise')
 const getUserLogsById = async (req, res) => {
   const { from, to, limit } = req.query
   console.log('from ', from, ' to ', to,  ' limit ', limit);
-  const name = await User.findById(req.params.id)
+  const name = await User.findById(req.params._id)
   const user = await Exercise.findOne({ 'username': name.username })
   const countQuery = await Exercise
     .where({ 'username': name.username })
@@ -24,7 +24,7 @@ const getUserLogsById = async (req, res) => {
   const log = {
     username: name.username,
     count: countQuery,
-    _id: req.params.id,
+    _id: req.params._id,
     log: exercises
   }
   if (user) {
