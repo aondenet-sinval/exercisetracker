@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"start": "node index.js",
-		"dev": "cross-env NODE_ENV=development nodemon index.js"
+		"dev": "cross-env NODE_ENV=development node index.js"
 	},
 	"dependencies": {
 		"body-parser": "^1.20.2",
