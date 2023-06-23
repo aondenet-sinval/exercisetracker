@@ -19,9 +19,9 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.get('/api/users', getUsers)
 app.get('/api/users/:_id', getUserById)
 app.get('/api/users/:_id/logs', getUserLogsById)
-// Rota para teste post
-// app.post('/api/users', addUser)
-// app.post('/api/users/:id/exercises', addExercise)
+// Rotas para teste post
+app.post('/api/users', addUser)
+app.post('/api/users/:id/exercises', addExercise)
 
 const listener = app.listen(process.env.PORT || 3000, () => {
   console.log('Your app is listening on port ' + listener.address().port)
