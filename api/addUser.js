@@ -7,11 +7,9 @@ const addUser =(req, res) => {
   } )
   user
     .save()
-    .then(savedUser => savedUser.toJSON())
-    .then(savedAndFormattedUser => {
-      res.json(savedAndFormattedUser)
-      // mongoose.connection.close()
-    } )
+    .then(savedUser => {
+      res.json(savedUser)
+    })
     .catch(error => res.json({error: error}))
 };
 
